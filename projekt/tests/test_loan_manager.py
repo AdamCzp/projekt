@@ -1,4 +1,3 @@
-
 import pytest
 from src.loan_manager import LoanManager
 from src.book_manager import BookManager
@@ -10,7 +9,8 @@ def setup_managers():
     book_manager = BookManager()
     user_manager = UserManager()
     loan_manager = LoanManager(book_manager, user_manager)
-    book_id = book_manager.add_book("1984", "George Orwell", 1949)
+    # Dodaj ISBN jako trzeci argument
+    book_id = book_manager.add_book("1984", "George Orwell", "9780451524935", 1949)
     user_id = user_manager.add_user("John Doe", "john@example.com")
     return loan_manager, book_id, user_id, book_manager, user_manager
 
@@ -91,7 +91,8 @@ class TestListLoans:
 
     def test_list_loans_multiple(self, setup_managers):
         loan_manager, book_id, user_id, book_manager, user_manager = setup_managers
-        book_id2 = book_manager.add_book("Animal Farm", "George Orwell", 1945)
+        # Dodaj ISBN jako trzeci argument
+        book_id2 = book_manager.add_book("Animal Farm", "George Orwell", "9780451526342", 1945)
         user_id2 = user_manager.add_user("Jane Doe", "jane@example.com")
         loan_manager.loan_book(user_id, book_id)
         loan_manager.loan_book(user_id2, book_id2)
@@ -105,7 +106,8 @@ class TestListLoans:
 class TestComplexLoanScenarios:
     def test_multiple_loans_same_user(self, setup_managers):
         loan_manager, book_id, user_id, book_manager, *_ = setup_managers
-        book_id2 = book_manager.add_book("Brave New World", "Aldous Huxley", 1932)
+        # Dodaj ISBN jako trzeci argument
+        book_id2 = book_manager.add_book("Brave New World", "Aldous Huxley", "9780060850524", 1932)
         loan_manager.loan_book(user_id, book_id)
         loan_manager.loan_book(user_id, book_id2)
         loans = loan_manager.list_loans()

@@ -12,21 +12,6 @@ class TestAddBook:
         assert manager.books[book_id]["isbn"] == "9780547928227"
 
     @pytest.mark.parametrize(
-        "title,author,isbn",
-        [
-            ("", "Author", "1234567890"),
-            ("Title", "", "1234567890"),
-            ("Title", "Author", ""),
-            (None, "Author", "1234567890"),
-            ("Title", None, "1234567890"),
-            ("Title", "Author", None),
-            ("A"*300, "Author", "1234567890"),  # bardzo długi tytuł
-            (123, "Author", "1234567890"),  # tytuł jako liczba
-            ("Title", 456, "1234567890"),  # autor jako liczba
-            ("Title", "Author", 789),  # ISBN jako liczba
-        ]
-    )
-    @pytest.mark.parametrize(
         "title,author,isbn,year",
         [
             ("", "Author", "1234567890", 2000),

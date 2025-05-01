@@ -1,0 +1,46 @@
+{
+    "books": {
+        "1": {
+            "title": "Władca Pierścieni",
+            "author": "J.R.R. Tolkien",
+            "isbn": "9788375780635",
+            "available": true,
+            "year": 1954,
+            "categories": [
+                "Fantastyka"
+            ]
+        },
+        "2": {
+            "title": "Morderstwo w Orient Expressie",
+            "author": "Agatha Christie",
+            "isbn": "9788327154644",
+            "available": true,
+            "year": 1934,
+            "categories": [
+                "Kryminał"
+            ]
+        },
+        "3": {
+            "title": "Steve Jobs",
+            "author": "Walter Isaacson",
+            "isbn": "9788324633562",
+            "available": true,
+            "year": 2011,
+            "categories": [
+                "Biografia"
+            ]
+        }
+    },
+    "users": {
+        "1": {
+            "name": "Jan Kowalski",
+            "email": "jan.kowalski@example.com"
+        },
+        "2": {
+            "name": "Anna Nowak",
+            "email": "anna.nowak@example.com"
+        }
+    },
+    "loans": {},
+    "reservations": {}
+}
